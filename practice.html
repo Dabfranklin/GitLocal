@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick=sushu(prompt())>判断任意一个数是否是素数</button>
+    <!-- 判断任意一个数是否是素数 -->
+    <button onclick=sum(prompt(),prompt())>两个数的平方阶乘和</button>
+    <button onclick=fn(prompt(),prompt())>找完全数</button>
+   
+    <script>
+       function sushu(a){
+           var flag=true
+         for(i=2;i<a/2;i++){
+           if(a%i==0){
+               flag=false
+               document.write(a +'不是素数') 
+               break
+           }
+         }
+         if(flag){
+            document.write(a +'是素数') 
+         }
+       }
+
+    //编写函数实现两个数的平方阶乘的相加的和
+     function sum(a,b){
+         var n1= pingfang(a)
+         var m1= pingfang(b)
+         var n2= jiecheng(n1)
+         var m2= jiecheng(m1)
+        var num=n2+m2//等于mun=jiecheng(pingfang(a))+jiecheng(pingfang(b))
+         
+         document.write(a+'和'+b+'的平方阶乘和为'+ num)
+     }
+     function pingfang(x){ 
+       return x*x
+      }
+     function jiecheng(y) {
+         var res=1
+         for(i=1;i<=y;i++){
+              res=res*i
+         }
+         return res
+       }
+     //找完全数
+     function isPerfect(x){
+         var sum=0
+         for(var i=1;i<x;i++){
+             if(x%i===0){
+                 sum+=i
+             }
+           }
+           if(sum===x){
+            document.write(sum+'是完全数'+'<br>')}
+     }
+     function fn(m,n){
+         for(var j=m;j<=n;j++){
+             isPerfect(j)
+            
+         }
+     }
+    </script>
+</body>
+</html>
